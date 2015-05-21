@@ -8,5 +8,9 @@ cookieApp.Cookie = Backbone.Model.extend({
 });
 
 cookieApp.Cookies = Backbone.Collection.extend({
+
+  initialize: function () {
+    this.view = new cookieApp.CookiesView({collection: this});
+  },
   model: cookieApp.Cookie
 });
